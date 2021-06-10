@@ -37,15 +37,17 @@ uint32_t get_pit_clock(void)
  */
 int main(void)
 {
+    SystemCoreClockUpdate();
+
     // PIT clock gate control ON
     CLOCK_EnableClock(kCLOCK_Pit);
 
     microseconds_init();
-    
-    microseconds_delay(1000);
-    
-    microseconds_set_delay(1000);
-    
+    // Delay 5s
+    microseconds_delay(5000000);
+    // Set delay time to 5s
+    microseconds_set_delay(5000000);
+    // wait 5s timeout
     while(!microseconds_is_timeout());
     
     microseconds_shutdown();

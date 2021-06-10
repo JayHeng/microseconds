@@ -15,7 +15,7 @@
 /*******************************************************************************
  * Prototypes
  ******************************************************************************/
-
+extern void SystemCoreClockUpdate (void);
 
 /*******************************************************************************
  * Code
@@ -25,12 +25,14 @@
  */
 int main(void)
 {
+    SystemCoreClockUpdate();
+
     microseconds_init();
-    
-    microseconds_delay(1000);
-    
-    microseconds_set_delay(1000);
-    
+    // Delay 5s
+    microseconds_delay(5000000);
+    // Set delay time to 5s
+    microseconds_set_delay(5000000);
+    // wait 5s timeout
     while(!microseconds_is_timeout());
     
     microseconds_shutdown();
