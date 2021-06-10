@@ -33,6 +33,10 @@ void microseconds_init(void);
 //! @brief 关闭计时
 void microseconds_shutdown(void);
 
+//! @brief Gets the clock value used for microseconds driver
+//! @brief 获取定时器时钟源数值
+uint32_t microseconds_get_clock(void);
+
 //! @brief Read back the running tick count
 //! @brief 获取系统累计计数值
 uint64_t microseconds_get_ticks(void);
@@ -40,6 +44,10 @@ uint64_t microseconds_get_ticks(void);
 //! @brief Returns the conversion of ticks to actual microseconds
 //! @brief 将计数值转换为时间值(微秒)
 uint32_t microseconds_convert_to_microseconds(uint64_t ticks);
+
+//! @brief Returns the conversion of microseconds to ticks
+//! @brief 将时间值(微秒)转换为计数值
+uint64_t microseconds_convert_to_ticks(uint32_t microseconds);
 
 //! @brief Delay specified time
 //! @brief 阻塞型延时(微秒级)

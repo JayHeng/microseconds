@@ -30,10 +30,6 @@ volatile uint32_t s_highCounter;
 extern void microseconds_timer_init(void);
 //! @brief 关闭硬件定时器
 extern void microseconds_timer_deinit(void);
-//! @brief 获取定时器时钟源数值
-extern uint32_t microseconds_get_clock(void);
-//! @brief 将时间值(微秒)转换为计数值
-static uint64_t microseconds_convert_to_ticks(uint32_t microseconds);
 
 /*******************************************************************************
  * Code
